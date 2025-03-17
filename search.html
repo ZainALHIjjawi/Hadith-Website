@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البحث عن حديث</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>البحث عن حديث</h1>
+    </header>
+
+    <section>
+        <input type="text" id="searchInput" placeholder="ابحث عن حديث...">
+        <button onclick="searchHadith()">بحث</button>
+        <p id="result"></p>
+    </section>
+
+    <script>
+        function searchHadith() {
+            const query = document.getElementById('searchInput').value;
+            const hadiths = {
+                "إنما الأعمال بالنيات": "رواه البخاري ومسلم",
+                "الدين النصيحة": "رواه مسلم",
+                "لا ضرر ولا ضرار": "رواه ابن ماجه"
+            };
+
+            document.getElementById('result').innerText = hadiths[query] || "لم يتم العثور على الحديث";
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2025 - جميع الحقوق محفوظة</p>
+    </footer>
+</body>
+</html>
